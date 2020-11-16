@@ -6,8 +6,10 @@ const app = express();
 app.use(logger('dev'));
 
 
-const PORT = 7500;
-app.listen();
+const PORT = process.env.PORT || 80;
+app.listen(PORT, () => {
+  console.log(`\nServer listening on port: ${PORT} - http://localhost:${PORT}`);
+});
 
 
 // route gốc của server
