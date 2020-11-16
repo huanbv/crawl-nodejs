@@ -7,9 +7,7 @@ app.use(logger('dev'));
 
 
 const PORT = 7500;
-app.listen(PORT, () => {
-  console.log(`\n\nServer listening on port: ${PORT} - http://localhost:${PORT}\n`);
-});
+app.listen();
 
 
 // route gốc của server
