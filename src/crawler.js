@@ -25,7 +25,7 @@ function start(siteUrl) {
             });
         
             // lưu dữ liệu vào data.json
-            fs.writeFile('data.json', JSON.stringify({users: data}), (err) => {
+            fs.writeFile('data.json', JSON.stringify({news: data}), (err) => {
                 if (!err) {
 
                     // đẩy dữ liệu lên FireStore
