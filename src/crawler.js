@@ -15,12 +15,18 @@ function start(siteUrl) {
             let data = [];
         
             $('.knswli-right').each((index, el) => {
+                const thumbnailUrl = $(el).find('.avatar').find('img').attr('href');
                 const name = $(el).find('h3 a').text();
                 const category = $(el).find('p.time_cate').find('a').text();
+                const time = $(el).find('p.time_cate > .gachngoai').find('.time').text();
                 const description = $(el).find('p.sapo').text();
         
                 data.push({
-                name,category, description
+                 thumbnailUrl, 
+                 name,
+                 category, 
+                 time,
+                 description
                 });
             });
         
