@@ -15,7 +15,7 @@ function start(siteUrl) {
             let data = [];
         
             $('.knswli-right').each((index, el) => {
-                const thumbnailUrl = $(el).find('li.tlitem > .avatar').find('href').attr('href');
+                const thumbnailUrl = a.find('a.avatar').find('img').attr('src');
                 const name = $(el).find('h3 a').text();
                 const category = $(el).find('p.time_cate').find('a').text();
                 const time = $(el).find('span.time').text();
