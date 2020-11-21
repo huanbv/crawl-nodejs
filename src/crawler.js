@@ -16,6 +16,7 @@ function start(siteUrl) {
         
             $('.tlitem').each((index, el) => {
                 const thumbnailUrl = $(el).find('a.avatar > img').attr('src');
+                const detailUrl = $(el).find('a.avatar').attr('href');
                 const name = $(el).find('.knswli-right h3 a').text();
                 const category = $(el).find('.knswli-right .time_cate').find('a').text();
                 const time = $(el).find('.knswli-right .time_cate .gachngoai > span > .time').attr('title');
@@ -23,6 +24,7 @@ function start(siteUrl) {
         
                 let currentData = {
                     thumbnailUrl, 
+                    detailUrl,
                     name,
                     category, 
                     date: time.split('T')[0],
