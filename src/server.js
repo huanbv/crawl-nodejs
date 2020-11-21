@@ -6,7 +6,7 @@ const app = express();
 app.use(logger('dev'));
 
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8500;
 app.listen(PORT, () => {
   console.log(`\nServer listening on port: ${PORT} - http://localhost:${PORT}`);
 });

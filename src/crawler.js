@@ -14,22 +14,23 @@ function start(siteUrl) {
             const $ = cheerio.load(html);
             let data = [];
         
-            $('.knswli-right').each((index, el) => {
-                const thumbnailUrl = a.find('a.avatar').find('img').attr('src');
-                const name = $(el).find('h3 a').text();
-                const category = $(el).find('p.time_cate').find('a').text();
-                const time = $(el).find('span.time').text();
-                const description = $(el).find('p.sapo').text();
+            $('.tlitem').each((index, el) => {
+                const thumbnailUrl = $(el).find('a.avatar > img').attr('src');
+                const name = $(el).find('.knswli-right h3 a').text();
+                const category = $(el).find('.knswli-right .time_cate').find('a').text();
+                const time = $(el).find('.knswli-right .time_cate .gachngoai > span > .time').attr('title');
+                const description = $(el).find('.knswli-right .sapo').text();
         
-                console.log(index);
+                let currentData = {
+                    thumbnailUrl, 
+                    name,
+                    category, 
+                    date: time.split('T')[0],
+                    time: time.split('T')[1],
+                    description
+                };
 
-                data.push({
-                 thumbnailUrl, 
-                 name,
-                 category, 
-                 time,
-                 description
-                });
+                data.push(currentData);
             });
         
             // lưu dữ liệu vào data.json
